@@ -1,4 +1,4 @@
-# CURI2021
+# CURI2021 - Raspberry Pi
 For testing the version of the Raspberry Pi:
   1. Chmod u+x runtest.sh
   2. ./runtest.sh
