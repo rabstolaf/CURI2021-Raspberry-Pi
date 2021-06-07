@@ -1,7 +1,7 @@
 #!/bin/bash
 
 #Checking apt file
-pkgs='wget autofs cowsay emacs fping isc-dchp-server libopenmpi3 libopenmpi-dev nfs-kernel-sever openmpi-bin openmpi-common sl vim nmap golang'
+pkgs='wget autofs cowsay emacs fping isc-dhcp-server libopenmpi3 libopenmpi-dev nfs-kernel-server openmpi-bin openmpi-common sl vim nmap golang'
 for pkg in $pkgs; do
         echo "Package checking: " $pkg
 	apt-cache show $pkg | tail -n +1 | head -n2 

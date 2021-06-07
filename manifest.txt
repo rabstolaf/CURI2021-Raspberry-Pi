@@ -18,8 +18,9 @@ Package checking:  fping
 Package: fping
 Version: 4.2-1
 
-Package checking:  isc-dchp-server
-E: No packages found
+Package checking:  isc-dhcp-server
+Package: isc-dhcp-server
+Source: isc-dhcp
 
 Package checking:  libopenmpi3
 Package: libopenmpi3
@@ -29,8 +30,9 @@ Package checking:  libopenmpi-dev
 Package: libopenmpi-dev
 Source: openmpi
 
-Package checking:  nfs-kernel-sever
-E: No packages found
+Package checking:  nfs-kernel-server
+Package: nfs-kernel-server
+Source: nfs-utils
 
 Package checking:  openmpi-bin
 Package: openmpi-bin
