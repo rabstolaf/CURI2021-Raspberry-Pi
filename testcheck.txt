@@ -1,0 +1,17 @@
+Greetings from process #0 of 1
+Hello from thread #0 of 1.
+Goodbye from thread #0
+Greetings from the master, #0 (
+Greetings from a worker, #2 (
+Greetings from a worker, #3 (
+Greetings from a worker, #1 (
+Greetings from process 0 of 4
+Greetings from process 1 of 4
+Greetings from process 2 of 4
+Greetings from process 3 of 4
+Hello from thread 0 of 1 from process 1 of 4 on
+Hello from thread 0 of 1 from process 2 of 4 on
+Hello from thread 0 of 1 from process 3 of 4 on
+Hello from thread 0 of 1 from process 0 of 4 on
+Seq. sum:
+Par. sum:

@@ -1,16 +1,67 @@
-00spmd.py was not run properly
-01masterWorker.py was not run properly
-02parallelLoopEqualChunks.py was not run properly
-03parallelLoopChunksOf1.py was not run properly
-05messagePassing.py was not run properly
-06messagePassing2.py was not run properly
-07messagePassing3.py was not run properly
-08broadcast.py was not run properly
-09broadcastUserInput.py was not run properly
-10broadcastSendReceive.py was not run properly
-11broadcastList.py was not run properly
-12reduction.py was not run properly
-13reductionList.py was not run properly
-14scatter.py was not run properly
-15gather.py was not run properly
-16ScatterGather.py was not run properly
+Package checking:  wget
+Package: wget
+Version: 1.20.1-1.1
+
+Package checking:  autofs
+Package: autofs
+Version: 5.1.2-4
+
+Package checking:  cowsay
+Package: cowsay
+Version: 3.03+dfsg2-6
+
+Package checking:  emacs
+Package: emacs
+Version: 1:26.1+1-3.2+deb10u2
+
+Package checking:  fping
+Package: fping
+Version: 4.2-1
+
+Package checking:  isc-dhcp-server
+Package: isc-dhcp-server
+Source: isc-dhcp
+
+Package checking:  libopenmpi3
+Package: libopenmpi3
+Source: openmpi
+
+Package checking:  libopenmpi-dev
+Package: libopenmpi-dev
+Source: openmpi
+
+Package checking:  nfs-kernel-server
+Package: nfs-kernel-server
+Source: nfs-utils
+
+Package checking:  openmpi-bin
+Package: openmpi-bin
+Source: openmpi
+
+Package checking:  openmpi-common
+Package: openmpi-common
+Source: openmpi
+
+Package checking:  sl
+Package: sl
+Version: 5.02-1
+
+Package checking:  vim
+Package: vim
+Version: 2:8.1.0875-5
+
+Package checking:  nmap
+Package: nmap
+Version: 7.70+dfsg1-6+deb10u1
+
+Package checking:  golang
+Package: golang
+Source: golang-defaults (2:1.11~1)
+
+Package checking: OpenMPI
+                 Package: Open MPI root@raspberrypi Distribution
+                Open MPI: 4.1.1
+           Java bindings: yes
+                Built by: root
+
+mpi4py            3.0.3      

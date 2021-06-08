@@ -1,0 +1,2 @@
+patterntest.sh: line 30: ./reduction: No such file or directory
+patterntest.sh: line 30: ./reduction: No such file or directory
