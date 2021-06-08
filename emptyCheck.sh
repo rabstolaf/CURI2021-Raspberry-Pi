@@ -6,9 +6,9 @@ program="$2"
  
 if [ -s "$_file" ] 
 then
-	echo "$program was not run properly"
+	echo -e "\e[1;31m$program \e[0m  was not run properly"
         # do something as file has data
 else
-	echo "Testing $program : Passed"
+	echo -e "Testing $program : \e[1;32mPassed\e[0m"
         # do something as file is empty 
 fi

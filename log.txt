@@ -1,0 +1,16 @@
+00spmd.py was not run properly
+01masterWorker.py was not run properly
+02parallelLoopEqualChunks.py was not run properly
+03parallelLoopChunksOf1.py was not run properly
+05messagePassing.py was not run properly
+06messagePassing2.py was not run properly
+07messagePassing3.py was not run properly
+08broadcast.py was not run properly
+09broadcastUserInput.py was not run properly
+10broadcastSendReceive.py was not run properly
+11broadcastList.py was not run properly
+12reduction.py was not run properly
+13reductionList.py was not run properly
+14scatter.py was not run properly
+15gather.py was not run properly
+16ScatterGather.py was not run properly
