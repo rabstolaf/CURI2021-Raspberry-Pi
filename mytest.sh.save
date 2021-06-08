@@ -1,0 +1,13 @@
+#!/bin/bash
+
+cd ~/patternlets/patternlets
+cd mpi4py
+
+modules='00spmd.py 01masterWorker.py 02parallelLoopEqualChunks.py 03parallelLoopChunksOf1.py 05messagePassing.py 06messagePassing2.py 07messagePassing3.py 08broadcast.py 09broadcastUserInput.py 10broadcastSendReceive.py 11broadcastList.py 12reduction.py 13reductionList.py 14scatter.py 15gather.py 16ScatterGather.py 17dynamicLoadBalance.py'
+
+for module in $modules; do
+	python3 run.py $module 4 -f -z -y > ~/CURI2021-Raspberry-Pi/out.txt  2>~/CURI2021-Raspberry-Pi/templog.txt
+	source ~/CURI2021-Raspberry-Pi/emptyCheck.sh ~/CURI2021-Raspberry-Pi/templog.txt $module
+done
+
+directory2='23.scatterV+gatherV
