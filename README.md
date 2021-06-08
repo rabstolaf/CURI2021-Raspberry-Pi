@@ -6,5 +6,5 @@ For testing each node of the Raspberry Pi:
 
 For testing the image:
   1. chmod u+x mytest.sh
-  2. ./mytest
+  2. ./mytest.sh
   3. The above script will produce a testing for 3 patternlets and all modules
