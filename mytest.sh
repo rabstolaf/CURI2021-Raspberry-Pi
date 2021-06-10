@@ -24,6 +24,9 @@ for mod in $directory2; do
 	mpicc -Wall -ansi -pedantic -std=c99 $cFile -o test > out.txt 2> templog.txt
 	mpirun -np 4 ./test > out.txt 2> templog.txt
 	source ~/CURI2021-Raspberry-Pi/emptyCheck.sh templog.txt $mod
+	rm -R test
+	rm out.txt
+	rm templog.txt
 done
 
 #Testing Java
@@ -45,11 +48,17 @@ cd ~/CSinParallel/Patternlets/hybrid-MPI+OpenMP/00.spmd
 make > out.txt
 mpirun -np 4 ./spmd > out.txt 2> templog.txt
 source ~/CURI2021-Raspberry-Pi/emptyCheck.sh templog.txt 00.spmd
+rm spmd
+rm out.txt
+rm templog.txt
 
 cd ~/CSinParallel/Patternlets/hybrid-MPI+OpenMP/01.spmd2 
 make > out.txt
 mpirun -np 4 ./spmd2 > out.txt 2> templog.txt
 source ~/CURI2021-Raspberry-Pi/emptyCheck.sh templog.txt 01.spmd2
+rm spmd2
+rm out.txt
+rm templog.txt
 
 
 #Testing openMP
@@ -63,6 +72,9 @@ for mod in $directory4;do
 	gcc -Wall -ansi -pedantic -std=c99 $cFile -o test -fopenmp > out.txt 2> templog.txt
 	./test 4 > out.txt 2> templog.txt
 	source ~/CURI2021-Raspberry-Pi/emptyCheck.sh templog.txt $mod
+	rm test
+	rm out.txt
+	rm templog.txt
 done
 
 #Testing pthread
@@ -76,14 +88,19 @@ for mod in $directory5;do
 	gcc -Wall -ansi -pedantic -std=c99 $cFile -o test -lpthread > out.txt 2> templog.txt
 	./test 4 > out.txt 2> templog.txt
 	source ~/CURI2021-Raspberry-Pi/emptyCheck.sh templog.txt $mod	 
+	rm test
+	rm out.txt
+	rm templog.txt
 done
 
 cd ~/CSinParallel/Patternlets/pthreads/08.sharedQueue
 make > out.txt 2> templog.txt
 ./producerConsumer 4 4 4 > out.txt 2> templog.txt
 source ~/CURI2021-Raspberry-Pi/emptyCheck.sh templog.txt 08.shareQueue
+rm producerConsumer
 
 cd ~/CSinParallel/Patternlets/pthreads/04.forkJoin5
 make > out.txt 2> templog.txt
 ./forkJoin5 4 > out.txt 2> templog.txt
 source ~/CURI2021-Raspberry-Pi/emptyCheck.sh templog.txt 04.forkJoin5 
+rm forkJoin5
