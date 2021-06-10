@@ -46,5 +46,5 @@ then
   rm /home/pi/outtest.txt
   rm /home/pi/err.txt
 else
-  echo -e "\e[1;32mTESTING THE CLUSTER RESULTED IN ERROR\e[0m"
+  echo -e "\e[1;31mTESTING THE CLUSTER RESULTED IN ERROR\e[0m"
 fi
