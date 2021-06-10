@@ -7,4 +7,4 @@ For testing each node of the Raspberry Pi - every modules of the patternlets:
 For testing the image - testing and compare version with some minor test:
   1. chmod u+x mytest.sh
   2. ./mytest.sh
-  3. The above script will produce a testing for 6 patternlets and all modules
+  3. The above script will produce a testing for 6 patternlets and 1 module each patternlet
