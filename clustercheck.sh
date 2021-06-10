@@ -22,7 +22,7 @@ mpirun -hostfile ~/hostfile -np 12 ./spmd 2>> /home/pi/err.txt 1>> /home/pi/outt
 #Cleanup the files
 rm spmd
 rm ~/hostfile
-rm ~/openmpi/mca-params.conf
+rm ~/.openmpi/mca-params.conf
   
 #Exit the hd-cluster account
 EOF
