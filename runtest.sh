@@ -6,6 +6,8 @@ source test.sh > log.txt 2>&1
 #Checking the manifest
 #If nothing show up, it means it fit the manifest
 diff log.txt manifest.txt
+rm log.txt
+rm manifest.txt
 
 #Checking the patternlets
 source patterntest.sh
