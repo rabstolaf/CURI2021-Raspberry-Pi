@@ -72,3 +72,5 @@ then
 
   fi
 fi
+
+chmod u+x clustercheck.sh
