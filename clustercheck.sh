@@ -7,12 +7,16 @@ sudo head-node
 sudo su hd-cluster << "EOF"
 cd ~
 pwd
-#run the hostfile
-soc-mpisetup
+
   
 #Testing Cluster on MPI/00.spmd patternlet
 echo "MPI cluster testing"
 cd ~/CSinParallel/Patternlets/MPI/00.spmd/ && make 2>> err.txt > /dev/null 
+
+#run the hostfile
+soc-mpisetup
+
+#Run the job
 mpirun -hostfile ~/hostfile -np 12 ./spmd 2>> /home/pi/err.txt 1>> /home/pi/outtest.txt
   
 #Cleanup the files
@@ -23,12 +27,6 @@ rm ~/openmpi/mca-params.conf
 #Exit the hd-cluster account
 EOF
 )
-  
-#shut down the workers
-sudo shutdown-workers
-  
-#Revert head-node to worker-node
-sudo worker-node
   
 #checking for desired output
 clusterWork=true
