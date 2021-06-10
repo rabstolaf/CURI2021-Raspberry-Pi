@@ -2,37 +2,44 @@
 #creating the head-node and the host file
 sudo head-node
   
-#entering the hd-cluster user
+#Running multiple subshells, because some commands end the script
+#Subshell 1: Running soc-mpisetup
 (
 sudo su hd-cluster << "EOF"
 cd ~
-pwd
+soc-mpisetup
+EOF
+)
 
-  
+#Subshell 2: Running the MPI job
+(
+sudo su hd-cluster << "EOF"
+cd ~
+
 #Testing Cluster on MPI/00.spmd patternlet
 echo "MPI cluster testing"
 cd ~/CSinParallel/Patternlets/MPI/00.spmd/ && make 2>> err.txt > /dev/null 
 
-#run the hostfile
-soc-mpisetup
-
 #Run the job
-mpirun -hostfile ~/hostfile -np 12 ./spmd 2>> /home/pi/err.txt 1>> /home/pi/outtest.txt
-  
-#Cleanup the files
-rm spmd
-rm ~/hostfile
-rm ~/.openmpi/mca-params.conf
-  
-#Exit the hd-cluster account
+mpirun -hostfile ~/hostfile -np 12 ./spmd 2>> ~/err.txt 1>> ~/outtest.txt
 EOF
 )
+
+#Subshell 3: Checking the output
+(
+sudo su hd-cluster << "EOF"
+cd ~
+
+#Cleanup the files
+rm ~/CSinParallel/Patternlets/MPI/00.spmd/spmd
+rm ~/hostfile
+rm ~/.openmpi/mca-params.conf
   
 #checking for desired output
 clusterWork=true
 while IFS= read -r line
 do
-  if ! grep "$line" /home/pi/outtest.txt > /dev/null
+  if ! grep "$line" ~/outtest.txt > /dev/null
   then
     echo -e "\e[1;31mFOLLOWING LINE NOT DETECTED: $line \e[0m"
     clusterWork=false
@@ -43,8 +50,11 @@ done < /home/pi/CURI2021-Raspberry-Pi/clustercheck.txt
 if $clusterWork 
 then
   echo -e "\e[1;32mCluster testing showed no errors \e[0m"
-  rm /home/pi/outtest.txt
-  rm /home/pi/err.txt
+  rm ~/outtest.txt
+  rm ~/err.txt
 else
   echo -e "\e[1;31mTESTING THE CLUSTER RESULTED IN ERROR\e[0m"
 fi
+
+EOF
+)
