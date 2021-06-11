@@ -1,5 +1,8 @@
 #!/bin/bash
 
+cd ~/CURI2021-Raspberry-Pi
+(cd .. ; tar cf - CSinParallel)  |  tar xf -
+
 #Create a log for output of testing
 source test.sh > log.txt 2>&1
 
