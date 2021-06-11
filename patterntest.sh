@@ -1,11 +1,5 @@
 #!/bin/bash
 
-#Java
-echo "Java testing"
-cd /home/pi/CSinParallel/Patternlets/java-OpenMPI/00.spmd/ && make 2> /home/pi/err.txt > /dev/null
-./run 2>> /home/pi/err.txt 1> /home/pi/outtest.txt
-rm Spmd.class
-
 # Pthreads
 echo "Pthread Testing"
 cd /home/pi/CSinParallel/Patternlets/pthreads/07.barrier/ && make 2>> /home/pi/err.txt > /dev/null
